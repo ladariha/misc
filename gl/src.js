@@ -427,7 +427,7 @@ function Printer(data, importedMonth) {
 
     function updateStreet(street) {
         var startRow = existingStreets[street]; // 0 is A1
-        var monthColumn = sheet.getRange(monthMap[importedMonth] + (6 + startRow) + ":" + monthMap[importedMonth] + (9 + startRow));
+        var monthColumn = sheet.getRange(monthMap[importedMonth] + (6 + startRow) + ":" + monthMap[importedMonth] + (7 + startRow));
 
 
         Logger.log("updating street " + street);
@@ -445,9 +445,7 @@ function Printer(data, importedMonth) {
         var r = collectDataByDate(relevantRecords, street);
         var values = [
             [r.sums["technik"][importedMonth]],
-            [r.sums["účetní"][importedMonth]],
-            [r.sums["technik"][importedMonth] + r.sums["účetní"][importedMonth]],
-            [price * (r.sums["technik"][importedMonth] + r.sums["účetní"][importedMonth])]
+            [r.sums["účetní"][importedMonth]]
         ];
         monthColumn.setValues(values);
     }
