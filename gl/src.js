@@ -30,7 +30,7 @@ String.prototype._glIsStreet = function () {
     if (this.toLowerCase() === "dům") {
         return false;
     }
-    return this.match(/^\D{2,3}\s\d+$/) !== null && this.trim().length > 0 ? true : false;
+    return this.match(/^\D{2,3}\s\d+(\sBD|\sSVJ)?$/) !== null && this.trim().length > 0 ? true : false;
 };
 
 function importLeden() {
